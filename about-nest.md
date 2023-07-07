@@ -134,13 +134,24 @@ resumindo, os módulos têm dois papéis:
 
 À grosso modo, os pipes são classes anotadas com `@Injectable()`, que ficarão
 entre a *Request* que o cliente está enviando e o *Route Handler*, que são os 
-decorators de rota dos métodos como o `@Get()`, ou seja, antes do controller,
+métodos implementados no controller para cada rota, ou seja, antes do controller,
 agindo basicamente como um *middleware*. E esses pipes têm dois casos de uso:
 
 - **Transformation:** transforma os dados para o formato desejado;
 
 - **Validation:** valida as entradas, se forem válidas passam adiante, senão, 
 uma exceção é lançada;
+
+### Guards
+
+Em resumo, os guards são executados antes de chegar ao Route Handler, parecido 
+com a execução dos Pipes. Mas diferente dos Pipes, os Guards têm a 
+responsabilidade única de apenas de informar se uma requisição pode seguir 
+adiante ou não, agindo como um *middleware* como no express.
+
+Para entender melhor sobre os guards e a diferença em comparação com um 
+middleware do express, recomendo a leitura dessa seção da 
+[documentação](https://docs.nestjs.com/guards).
 
 ## CLI do Nest
 

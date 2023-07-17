@@ -3,7 +3,7 @@ import {
   Injectable,
   UnauthorizedException,
 } from '@nestjs/common';
-import { UsersRepository } from 'src/repository/users.repository';
+import { UserRepository } from 'src/repository/user.repository';
 import { SignInDto } from './dto/signin.dto';
 import { compare, hash } from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
@@ -12,14 +12,14 @@ import { SignupDto } from './dto/signup.dto';
 @Injectable()
 export class AuthService {
   constructor(
-    private readonly usersRepository: UsersRepository,
+    private readonly userRepository: UserRepository,
     private readonly jwtService: JwtService,
   ) {}
 
   async signup(signupDto: SignupDto) {
     const { name, email, password } = signupDto;
 
-    const emailTaken = await this.usersRepository.findUnique({
+    const emailTaken = await this.userRepository.findUnique({
       where: { email },
       select: { id: true },
     });
@@ -30,7 +30,7 @@ export class AuthService {
 
     const hashedPassword = await hash(password, 12);
 
-    const user = await this.usersRepository.create({
+    const user = await this.userRepository.create({
       data: {
         name,
         email,
@@ -65,7 +65,7 @@ export class AuthService {
 
   async signIn(signInDto: SignInDto) {
     const { email, password } = signInDto;
-    const user = await this.usersRepository.findUnique({
+    const user = await this.userRepository.findUnique({
       where: { email },
     });
 

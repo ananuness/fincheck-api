@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
-import { UsersRepository } from 'src/repository/users.repository';
+import { UserRepository } from 'src/repository/user.repository';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly usersRepository: UsersRepository) {}
+  constructor(private readonly userRepository: UserRepository) {}
 
   getUserById(userId: string) {
-    return this.usersRepository.findUnique({
+    return this.userRepository.findUnique({
       where: { id: userId },
       select: {
         name: true,

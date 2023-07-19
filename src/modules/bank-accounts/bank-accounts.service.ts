@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateBankAccountDto } from './dto/create-bank-account.dto';
 import { UpdateBankAccountDto } from './dto/update-bank-account.dto';
 import { BankAccountRepository } from 'src/repository/bank-accounts.repository';
@@ -22,15 +22,33 @@ export class BankAccountsService {
   }
 
   findAllByUserId(userId: string) {
-    return `This action returns all bankAccounts`;
+    return this.bankAccountRepository.findMany({
+      where: { userId },
+    });
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} bankAccount`;
-  }
+  async update(
+    userId: string,
+    BankAccountId: string,
+    updateBankAccountDto: UpdateBankAccountDto,
+  ) {
+    const isOwner = await this.bankAccountRepository.findFirst({
+      where: { userId, id: BankAccountId },
+    });
 
-  update(id: number, updateBankAccountDto: UpdateBankAccountDto) {
-    return `This action updates a #${id} bankAccount`;
+    if (!isOwner) throw new NotFoundException('Bank Account not found');
+
+    const { name, type, initialBalance, color } = updateBankAccountDto;
+
+    return this.bankAccountRepository.update({
+      where: { id: BankAccountId },
+      data: {
+        name,
+        type,
+        initialBalance,
+        color,
+      },
+    });
   }
 
   remove(id: number) {

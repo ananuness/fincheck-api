@@ -68,20 +68,35 @@ export class TransactionsService {
     });
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} transaction`;
+  async remove(userId: string, transactionId: string) {
+    await this.validateOwnership(userId, transactionId);
+
+    return this.transactionRepository.delete({
+      where: {
+        id: transactionId,
+      },
+    });
   }
 
   private async validateOwnership(
     userId: string,
-    bankAccountId: string,
-    categoryId: string,
+    bankAccountId?: string,
+    categoryId?: string,
     transactionId?: string,
   ) {
     await Promise.all([
-      this.validateTransactionOwnershipService.validate(userId, transactionId),
-      this.validateBankAccountOwnershipService.validate(userId, bankAccountId),
-      this.validateCategoryOwnershipService.validate(userId, categoryId),
+      transactionId &&
+        this.validateTransactionOwnershipService.validate(
+          userId,
+          transactionId,
+        ),
+      bankAccountId &&
+        this.validateBankAccountOwnershipService.validate(
+          userId,
+          bankAccountId,
+        ),
+      categoryId &&
+        this.validateCategoryOwnershipService.validate(userId, categoryId),
     ]);
   }
 }

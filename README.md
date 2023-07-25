@@ -9,27 +9,14 @@
   transações. Pensado para ser algo simples e intuitivo.
 </p>
 
-## Features
+## 📍 Pré-requisitos
 
-- [x] Login de usuário
-- [x] Cadastro de usuário
-- [x] Visualização dos dados do usuário
-- [x] Cadastro de contas bancárias
-- [x] Listagem de contas bancárias
-- [x] Edição de uma conta bancária
-- [x] Exclusão de uma conta bancária
-- [x] Listagem de categorias para transações
-- [x] Cadastro de transações
-- [x] Listagem de transações por mês e ano, conta bancária e tipo (INCOME/EXPENSE)
-- [x] Edição de uma transação
-- [x] Exclusão de uma transação
-
-## Pré-requisitos
-
-- Node.js >= 16
-- Git
-- PostgreSQL instalado ou um container com a imagem do PostgreSQL rodando
-## Rodando a aplicação
+Antes de começar, você vai precisar ter instalado em sua máquina as 
+seguintes ferramentas: [Git](https://git-scm.com), 
+[Node.js >= 16](https://nodejs.org/en/). Além de ter o 
+[PostgreSQL](https://www.postgresql.org/download/) instalado ou um 
+container com a imagem do PostgreSQL rodando
+## ⚙️ Rodando a aplicação
 
 Antes de rodar a API, garanta que preencheu corretamente o arquivo `.env`,
 seguindo o exemplo passado no arquivo `.env.example`. Após isso, siga
@@ -46,15 +33,25 @@ $ npm i
 $ npm run start:dev
 ```
 
-## Conceitos importantes
+## 🚀 Features
 
-- **Controller:** responsável por receber as requisições, extrair as 
-informações necessárias, validá-las e delegar o que será executado para 
-o recurso responsável pela regra de negócio/lógica;
+- [x] Login de usuário
+- [x] Cadastro de usuário
+- [x] Visualização dos dados do usuário
+- [x] Cadastro de contas bancárias
+- [x] Listagem de contas bancárias
+- [x] Edição de uma conta bancária
+- [x] Exclusão de uma conta bancária
+- [x] Listagem de categorias para transações
+- [x] Cadastro de transações
+- [x] Listagem de transações por mês e ano, conta bancária e tipo (INCOME/EXPENSE)
+- [x] Edição de uma transação
+- [x] Exclusão de uma transação
 
-- **Service ou useCase:** responsável pela implementação das regras de 
-negócio e/ou lógicas necessárias da aplicação
+## 🔗 Links úteis
 
-## Links uteis
+- Documentação do [Nestjs](https://docs.nestjs.com/)
+- [Definindo datasource no Prisma](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
+- Documentação do [Prisma](https://docs.nestjs.com/recipes/prisma#set-up-prisma) 
+usado com o Nestjs
 
-https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference

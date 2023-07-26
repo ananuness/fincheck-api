@@ -5,14 +5,14 @@
 
 
 <p align="center">
-  API para gestão de finanças pessoais, mapeando contas bancárias e 
-  transações. Pensado para ser algo simples e intuitivo.
+  API para gestão de finanças pessoais, mapeando contas bancárias e transações. 
+  Pensado para ser algo simples e intuitivo.
 </p>
 
 ## 📍 Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as 
-seguintes ferramentas: [Git](https://git-scm.com), 
+Antes de começar, você vai precisar ter instalado em sua máquina as seguintes 
+ferramentas: [Git](https://git-scm.com), 
 [Node.js >= 16](https://nodejs.org/en/). Além de ter o 
 [PostgreSQL](https://www.postgresql.org/download/) instalado ou um 
 container com a imagem do PostgreSQL rodando
@@ -48,6 +48,25 @@ $ npm run start:dev
 - [x] Edição de uma transação
 - [x] Exclusão de uma transação
 
+## 🌐 Rotas
+
+### POST /auth/signup
+
+### POST /auth/signin
+
+### GET /users/me
+
+### GET /categories
+
+### POST /bank-accounts
+
+### GET /bank-accounts
+
+### PUT /bank-accounts/:id
+
+### DELETE /bank-accounts/:id
+
+
 ## 🔗 Links úteis
 
 - Documentação do [Nestjs](https://docs.nestjs.com/)
@@ -55,3 +74,9 @@ $ npm run start:dev
 - Documentação do [Prisma](https://docs.nestjs.com/recipes/prisma#set-up-prisma) 
 usado com o Nestjs
 
+<hr>
+
+<p align="center">
+  Feito com 💚 por 
+  <a href="https://www.linkedin.com/in/ana-beatriz-nunes/">Ana Beatriz Nunes</a>
+</p>

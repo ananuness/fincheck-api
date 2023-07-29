@@ -3,19 +3,20 @@
   <h1>💳️ Fincheck</h1>
 </div>
 
-
 <p align="center">
-  API para gestão de finanças pessoais, mapeando contas bancárias e transações. 
-  Pensado para ser algo simples e intuitivo.
+  API voltada para a gestão de finanças pessoais, mapeando e categorizando 
+  contas bancárias e transações, pensado para ser algo simples e intuitivo.
 </p>
 
 ## 📍 Pré-requisitos
 
-Antes de começar, você vai precisar ter instalado em sua máquina as seguintes 
-ferramentas: [Git](https://git-scm.com), 
-[Node.js >= 16](https://nodejs.org/en/). Além de ter o 
-[PostgreSQL](https://www.postgresql.org/download/) instalado ou um 
-container com a imagem do PostgreSQL rodando
+Antes de começar, você vai precisar ter instalado em sua máquina as 
+seguintes ferramentas: 
+- [Git](https://git-scm.com)
+- [Node.js >= 16](https://nodejs.org/en/)
+- [PostgreSQL](https://www.postgresql.org/download/) instalado ou um 
+container com uma [imagem](https://hub.docker.com/_/postgres) do PostgreSQL
+
 ## ⚙️ Rodando a aplicação
 
 Antes de rodar a API, garanta que preencheu corretamente o arquivo `.env`,
@@ -48,31 +49,12 @@ $ npm run start:dev
 - [x] Edição de uma transação
 - [x] Exclusão de uma transação
 
-## 🌐 Rotas
+<!-- ## 🌐 Rotas
 
-### POST /auth/signup
+Para conferir todo o mapeamento e funcionamento das rotas, siga os
+passos após baixar a aplicação: -->
 
-### POST /auth/signin
-
-### GET /users/me
-
-### GET /categories
-
-### POST /bank-accounts
-
-### GET /bank-accounts
-
-### PUT /bank-accounts/:id
-
-### DELETE /bank-accounts/:id
-
-
-## 🔗 Links úteis
-
-- Documentação do [Nestjs](https://docs.nestjs.com/)
-- [Definindo datasource no Prisma](https://www.prisma.io/docs/reference/api-reference/prisma-schema-reference)
-- Documentação do [Prisma](https://docs.nestjs.com/recipes/prisma#set-up-prisma) 
-usado com o Nestjs
+<h4 align="center">🚧 Projeto em construção 👷🏻‍♀️</h4>
 
 <hr>
 

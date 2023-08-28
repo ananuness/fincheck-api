@@ -1,12 +1,11 @@
 <div align="center">
   <img src="./assets/fincheck-banner.png" alt="fincheck">
   <h1>💳️ Fincheck</h1>
+  <p align="center">
+    API voltada para a gestão de finanças pessoais, mapeando e categorizando 
+    contas bancárias e transações, de forma simples e intuitiva.
+  </p>
 </div>
-
-<p align="center">
-  API voltada para a gestão de finanças pessoais, mapeando e categorizando 
-  contas bancárias e transações, pensado para ser algo simples e intuitivo.
-</p>
 
 ## 📍 Pré-requisitos
 
